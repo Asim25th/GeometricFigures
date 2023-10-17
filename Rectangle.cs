@@ -26,7 +26,6 @@
                 double area = Math.Round(a * b, 3);
                 Console.WriteLine($"\nПлощадь прямоугольника: {area}");
             }
-
         }
 
         public void perimeter()
