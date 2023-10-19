@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Console.WriteLine("ПРОГРАММА ДЛЯ ВЫЧИСЛЕНИЯ ПЛОЩАДИ \nИ ПЕРИМЕТРА ГЕОМЕТРИЧЕСКИХ ФИГУР");
-            Console.WriteLine("\n1. Квадрат\n2. Прямоугольник\n3. Круг\n4. Треугольник");
+            Console.WriteLine("\n1. Квадрат\n2. Прямоугольник\n3. Круг\n4. Треугольник\n5. Пирамида / Конус");
             Console.Write("\nВведите номер желаемой фигуры: ");
             int userChoice = (Convert.ToInt32(Console.ReadLine()));
 
@@ -39,6 +39,13 @@
                     Console.Clear();
                     Main(args);
                     break;
+                //case 5:
+                //    Pyramid pyramid = new Pyramid();
+                //    Console.Clear();
+                //    pyramid.input();
+                //    Console.Clear();
+                //    Main(args);
+                //    break;
                 default:
                     Console.WriteLine("\nОШИБКА: Вы ввели неверное значение. Нажмите Enter и попробуйте снова.");
                     Console.ReadKey();
