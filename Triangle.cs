@@ -18,7 +18,7 @@
 
             if (a <= 0 || b <= 0 || c <= 0)
             {
-                Console.WriteLine("ОШИБКА: Длина не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
+                Console.WriteLine("\nОШИБКА: Длина не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
                 this.input();
@@ -28,8 +28,6 @@
             {
                 if (a + b > c && a + c > b && b + c > a) // проверка треугольника на существование
                 {
-                    double p = (a + b + c) / 2; // полупериметр
-                    double area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
                     this.area();
                 }
 

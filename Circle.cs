@@ -12,7 +12,7 @@
 
             if (r <= 0)
             {
-                Console.WriteLine("ОШИБКА: Радиус не может быть меньше или равным нулю. Нажмите Enter и попробуйте снова.");
+                Console.WriteLine("\nОШИБКА: Радиус не может быть меньше или равным нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
                 this.input();
