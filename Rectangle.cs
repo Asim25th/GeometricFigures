@@ -5,7 +5,7 @@
         private double a;
         private double b;
 
-        public void area()
+        public void input() 
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА ПРЯМОУГОЛЬНИКА");
             Console.Write("\nВведите длину первой стороны прямоугольника: ");
@@ -18,19 +18,30 @@
                 Console.WriteLine("ОШИБКА: Длина не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
-                this.area();
+                this.input();
             }
 
             else
             {
-                double area = Math.Round(a * b, 3);
-                Console.WriteLine($"\nПлощадь прямоугольника: {area}");
+                area();
             }
         }
 
-        public void perimeter()
+        private void area()
+        {           
+            double area = Math.Round(a * b, 3);
+            perimeter(area);
+        }
+
+        private void perimeter(double area)
         {
             double perimeter = Math.Round((a + b) * 2, 3);
+            output(area, perimeter);
+        }
+
+        private void output(double area, double perimeter)
+        {
+            Console.WriteLine($"\nПлощадь прямоугольника: {area}");
             Console.WriteLine($"Периметр прямоугольника: {perimeter}");
             Console.WriteLine("\nНажмите Enter, чтобы вернуться в главное меню");
             Console.ReadKey();

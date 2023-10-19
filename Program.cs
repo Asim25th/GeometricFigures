@@ -14,32 +14,28 @@
                 case 1:
                     Square square = new Square();
                     Console.Clear();
-                    square.area();
-                    square.perimeter();
+                    square.input();
                     Console.Clear();
                     Main(args);
                     break;
                 case 2:
                     Rectangle rectangle = new Rectangle();
                     Console.Clear();
-                    rectangle.area();
-                    rectangle.perimeter();
+                    rectangle.input();
                     Console.Clear();
                     Main(args);
                     break;
                 case 3:
                     Circle circle = new Circle();
                     Console.Clear();
-                    circle.area();
-                    circle.perimeter();
+                    circle.input();
                     Console.Clear();
                     Main(args);
                     break;
                 case 4:
                     Triangle triangle = new Triangle();
                     Console.Clear();
-                    triangle.area();
-                    triangle.perimeter();
+                    triangle.input();
                     Console.Clear();
                     Main(args);
                     break;

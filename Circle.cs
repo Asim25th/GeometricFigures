@@ -4,7 +4,7 @@
     {
         private double r;
 
-        public void area()
+        public void input()
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА КРУГА");
             Console.Write("\nВведите радиус круга: ");
@@ -15,19 +15,30 @@
                 Console.WriteLine("ОШИБКА: Радиус не может быть меньше или равным нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
-                this.area();
+                this.input();
             }
 
             else
             {
-                double area = Math.Round(Math.PI + Math.Pow(r, 2), 3);
-                Console.WriteLine($"\nПлощадь круга: {area}");
+                area();
             }
         }
 
-        public void perimeter()
+        private void area()
+        {
+            double area = Math.Round(Math.PI + Math.Pow(r, 2), 3);
+            perimeter(area);
+        }
+
+        private void perimeter(double area)
         {
             double perimeter = Math.Round(2 * Math.PI * r, 3);
+            output(area, perimeter);
+        }
+
+        private void output(double area, double perimeter)
+        {
+            Console.WriteLine($"\nПлощадь круга: {area}");
             Console.WriteLine($"Периметр круга: {perimeter}");
             Console.WriteLine("\nНажмите Enter, чтобы вернуться в главное меню");
             Console.ReadKey();

@@ -6,7 +6,7 @@
         private double b;
         private double c;
 
-        public void area()
+        public void input()
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА ТРЕУГОЛЬНИКА");
             Console.Write("\nВведите длину первой стороны треугольника: ");
@@ -21,29 +21,16 @@
                 Console.WriteLine("ОШИБКА: Длина не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
-                this.area();
+                this.input();
             }
 
             else
             {
                 if (a + b > c && a + c > b && b + c > a) // проверка треугольника на существование
                 {
-                    if (a != b && a != c && b != c) // разносторонний ли треугольник
-                    {
-                        Console.WriteLine("\nВид треугольника по сторонам: разносторонний");
-                    }
-                    else if (a == b && a == c && b == c) // равносторонний ли треугольник
-                    {
-                        Console.WriteLine("\nВид треугольника по сторонам: равносторонний");
-                    }
-                    else if (a == b || a == c || b == c) // равнобедренный ли треугольник
-                    {
-                        Console.WriteLine("\nВид треугольника по сторонам: равнобедренный");
-                    }
-
                     double p = (a + b + c) / 2; // полупериметр
                     double area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
-                    Console.WriteLine($"\nПлощадь треугольника: {area}");
+                    this.area();
                 }
 
                 else
@@ -51,14 +38,40 @@
                     Console.WriteLine("\nОШИБКА: Такой треугольник не существует. Нажмите Enter и попробуйте снова.");
                     Console.ReadKey();
                     Console.Clear();
-                    this.area();
+                    this.input();
                 }
             }
         }
 
-        public void perimeter()
+        private void area()
+        {
+            double p = (a + b + c) / 2; // полупериметр
+            double area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
+            perimeter(area);        
+        }
+
+        private void perimeter(double arae)
         {
             double perimeter = Math.Round(a + b + c, 3);
+            output(arae, perimeter);
+        }
+
+        private void output(double area, double perimeter)
+        {
+            if (a != b && a != c && b != c) // разносторонний ли треугольник
+            {
+                Console.WriteLine("\nВид треугольника по сторонам: разносторонний");
+            }
+            else if (a == b && a == c && b == c) // равносторонний ли треугольник
+            {
+                Console.WriteLine("\nВид треугольника по сторонам: равносторонний");
+            }
+            else if (a == b || a == c || b == c) // равнобедренный ли треугольник
+            {
+                Console.WriteLine("\nВид треугольника по сторонам: равнобедренный");
+            }
+
+            Console.WriteLine($"\nПлощадь треугольника: {area}");
             Console.WriteLine($"Периметр треугольника: {perimeter}");
             Console.WriteLine("\nНажмите Enter, чтобы вернуться в главное меню");
             Console.ReadKey();

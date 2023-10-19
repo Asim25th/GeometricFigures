@@ -4,7 +4,7 @@
     {
         private double a; // сторона квадрата
 
-        public void area()
+        public void input()
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА КВАДРАТА");
             Console.Write("\nВведите длину стороны квадрата: ");
@@ -15,19 +15,30 @@
                 Console.WriteLine("ОШИБКА: Длина не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
-                this.area();
+                this.input();
             }
 
             else
             {
-                double area = Math.Round(Math.Pow(a, 2), 3);
-                Console.WriteLine($"\nПлощадь квадрата: {area}");
+                area();
             }
         }
+        
+        private void area()
+        {
+            double area = Math.Round(Math.Pow(a, 2), 3);
+            perimeter(area);
+        }
 
-        public void perimeter()
+        private void perimeter(double area)
         {
             double perimeter = Math.Round(4 * a, 3);
+            output(area, perimeter);
+        }
+
+        private void output(double area, double perimeter)
+        {
+            Console.WriteLine($"\nПлощадь квадрата: {area}");
             Console.WriteLine($"Периметр квадрата: {perimeter}");
             Console.WriteLine("\nНажмите Enter, чтобы вернуться в главное меню");
             Console.ReadKey();
