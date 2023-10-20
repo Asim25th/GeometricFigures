@@ -39,13 +39,13 @@
                     Console.Clear();
                     Main(args);
                     break;
-                //case 5:
-                //    Pyramid pyramid = new Pyramid();
-                //    Console.Clear();
-                //    pyramid.input();
-                //    Console.Clear();
-                //    Main(args);
-                //    break;
+                case 5:
+                    Pyramid pyramid = new Pyramid();
+                    Console.Clear();
+                    pyramid.input();
+                    Console.Clear();
+                    Main(args);
+                    break;
                 default:
                     Console.WriteLine("\nОШИБКА: Вы ввели неверное значение. Нажмите Enter и попробуйте снова.");
                     Console.ReadKey();
