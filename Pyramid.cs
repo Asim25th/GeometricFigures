@@ -40,7 +40,14 @@
                     area(userChoice);
                     break;
                 case 3:
-                    
+                    Console.Clear();
+                    Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ЧЕТЫРЕХУГОЛЬНОЙ ПИРАМИДЫ");
+                    Console.Write("\nВведите ребро основания пирамиды: ");
+                    a = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите боковое ребро пирамиды: ");
+                    b = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите высоту пирамиды (отрезок от вершины пирамиды до центра его основания): ");
+                    H = Convert.ToSingle(Console.ReadLine());
                     area(userChoice);
                     break;
                 default:
@@ -62,13 +69,13 @@
 
             else if (userChoice == 2) // треугольная пирамида
             {
-                double area = Math.Round((Math.Pow(a, 2) * Math.Sqrt(3) + 6 * a * Math.Sqrt(Math.Pow(b, 2) - Math.Pow(a, 2) / 4)) / 4, 3);
+                double area = Math.Round(Math.Sqrt(3) / 4 * Math.Pow(a, 2) + 3 / 2 * a * Math.Sqrt(Math.Pow(b, 2) - Math.Pow(a, 2) / 4), 3);
                 perimeter(userChoice, area);
             }
 
             else if (userChoice == 3) // четырехугольная пирамида
             {
-                double area = Math.Round(Math.PI * R * l + Math.PI * Math.Pow(R, 2), 3);
+                double area = Math.Round(Math.Pow(a, 2) + 2 * a * Math.Sqrt(Math.Pow(b, 2) - Math.Pow(a, 2) / 4), 3);
                 perimeter(userChoice, area);
             }
         }
@@ -83,13 +90,13 @@
 
             else if (userChoice == 2)
             {
-                double perimeter = Math.Round(Math.PI * R * l + Math.PI * Math.Pow(R, 2), 3);
+                double perimeter = Math.Round(3 * a + 3 * (a + b + b), 3);
                 volume(userChoice, area, perimeter);
             }
 
             else if (userChoice == 3)
             {
-                double perimeter = Math.Round(Math.PI * R * l + Math.PI * Math.Pow(R, 2), 3);
+                double perimeter = Math.Round(4 * a + 4 * (a + b + b), 3);
                 volume(userChoice, area, perimeter);
             }
         }
@@ -104,13 +111,13 @@
 
             else if (userChoice == 2)
             {
-                //double volume = Math.Round(, 3);
+                double volume = Math.Round(((Math.Pow(a, 2) * Math.Sqrt(3)) / 4 * H) / 3, 3);
                 output(area, perimeter, volume);
             }
 
             else if (userChoice == 3)
             {
-                double volume = Math.Round(Math.PI * R * l + Math.PI * Math.Pow(R, 2), 3);
+                double volume = Math.Round((Math.Pow(a, 2) * H) / 3, 3);
                 output(area, perimeter, volume);
             }
         }
