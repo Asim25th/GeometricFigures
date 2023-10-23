@@ -41,14 +41,14 @@
             }
         }
 
-        private void area()
+        private void area() // площадь
         {
             double p = (a + b + c) / 2; // полупериметр
             double area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
             perimeter(area);        
         }
 
-        private void perimeter(double arae)
+        private void perimeter(double arae) // периметр
         {
             double perimeter = Math.Round(a + b + c, 3);
             output(arae, perimeter);

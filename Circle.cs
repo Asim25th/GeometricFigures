@@ -24,13 +24,13 @@
             }
         }
 
-        private void area()
+        private void area() // площадь
         {
             double area = Math.Round(Math.PI + Math.Pow(r, 2), 3);
             perimeter(area);
         }
 
-        private void perimeter(double area)
+        private void perimeter(double area) // периметр
         {
             double perimeter = Math.Round(2 * Math.PI * r, 3);
             output(area, perimeter);
