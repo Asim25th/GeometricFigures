@@ -15,58 +15,77 @@
             Console.Write("\nВведите номер желаемой фигуры: ");
             int userChoice = (Convert.ToInt32(Console.ReadLine()));
 
-            if (a <= 0 || b <= 0 || H <= 0 || l <= 0 || R <= 0)
+            switch (userChoice)
             {
-                Console.WriteLine("\nОШИБКА: Длина не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
-                Console.ReadKey();
-                Console.Clear();
-                this.input();
-            }
-
-            else
-            {
-                switch (userChoice)
-                {
-                    case 1:
-                        Console.Clear();
-                        Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА КОНУСА");
-                        Console.Write("\nВведите радиус (основания) конуса: ");
-                        R = Convert.ToSingle(Console.ReadLine());
-                        Console.Write("Введите образующую конуса (отрезок от вершины конуса до границы его основания): ");
-                        l = Convert.ToSingle(Console.ReadLine());
-                        Console.Write("Введите высоту конуса (отрезок от вершины конуса до центра его основания): ");
-                        H = Convert.ToSingle(Console.ReadLine());
-                        area(userChoice);
-                        break;
-                    case 2:
-                        Console.Clear();
-                        Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ТРЕУГОЛЬНОЙ ПИРАМИДЫ");
-                        Console.Write("\nВведите ребро основания пирамиды: ");
-                        a = Convert.ToSingle(Console.ReadLine());
-                        Console.Write("Введите боковое ребро пирамиды: ");
-                        b = Convert.ToSingle(Console.ReadLine());
-                        Console.Write("Введите высоту пирамиды (отрезок от вершины пирамиды до центра его основания): ");
-                        H = Convert.ToSingle(Console.ReadLine());
-                        area(userChoice);
-                        break;
-                    case 3:
-                        Console.Clear();
-                        Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ЧЕТЫРЕХУГОЛЬНОЙ ПИРАМИДЫ");
-                        Console.Write("\nВведите ребро основания пирамиды: ");
-                        a = Convert.ToSingle(Console.ReadLine());
-                        Console.Write("Введите боковое ребро пирамиды: ");
-                        b = Convert.ToSingle(Console.ReadLine());
-                        Console.Write("Введите высоту пирамиды (отрезок от вершины пирамиды до центра его основания): ");
-                        H = Convert.ToSingle(Console.ReadLine());
-                        area(userChoice);
-                        break;
-                    default:
-                        Console.WriteLine("\nОШИБКА: Вы ввели неверное значение. Нажмите Enter и попробуйте снова.");
+                case 1:
+                    Console.Clear();
+                    Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА КОНУСА");
+                    Console.Write("\nВведите радиус (основания) конуса: ");
+                    R = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите образующую конуса (отрезок от вершины конуса до границы его основания): ");
+                    l = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите высоту конуса (отрезок от вершины конуса до центра его основания): ");
+                    H = Convert.ToSingle(Console.ReadLine());
+                    if (H <= 0 || l <= 0 || R <= 0)
+                    {
+                        Console.WriteLine("\nОШИБКА: Значение не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                         Console.ReadKey();
                         Console.Clear();
-                        input();
-                        break;
-                }
+                        this.input();
+                    }
+                    else
+                    {
+                        area(userChoice);
+                    }
+                    break;
+                case 2:
+                    Console.Clear();
+                    Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ТРЕУГОЛЬНОЙ ПИРАМИДЫ");
+                    Console.Write("\nВведите ребро основания пирамиды: ");
+                    a = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите боковое ребро пирамиды: ");
+                    b = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите высоту пирамиды (отрезок от вершины пирамиды до центра его основания): ");
+                    H = Convert.ToSingle(Console.ReadLine());
+                    if (H <= 0 || b <= 0 || a <= 0)
+                    {
+                        Console.WriteLine("\nОШИБКА: Значение не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        this.input();
+                    }
+                    else
+                    {
+                        area(userChoice);
+                    }
+                    break;
+                case 3:
+                    Console.Clear();
+                    Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ЧЕТЫРЕХУГОЛЬНОЙ ПИРАМИДЫ");
+                    Console.Write("\nВведите ребро основания пирамиды: ");
+                    a = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите боковое ребро пирамиды: ");
+                    b = Convert.ToSingle(Console.ReadLine());
+                    Console.Write("Введите высоту пирамиды (отрезок от вершины пирамиды до центра его основания): ");
+                    H = Convert.ToSingle(Console.ReadLine());
+                    if (H <= 0 || b <= 0 || a <= 0)
+                    {
+                        Console.WriteLine("\nОШИБКА: Значение не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
+                        Console.ReadKey();
+                        Console.Clear();
+                        this.input();
+                    }
+                    else
+                    {
+                        area(userChoice);
+                    }
+                    break;
+                default:
+                    Console.WriteLine("\nОШИБКА: Вы ввели неверное значение. Нажмите Enter и попробуйте снова.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    input();
+                    break;
             }
         }
 
