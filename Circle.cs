@@ -1,47 +1,49 @@
 ﻿namespace geometric_figures
 {
-    class Circle // круг
+    class Circle : Figures // круг
     {
-        private double r;
+        private double R; // радиус круга
 
-        public void input()
+        public Circle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+
+        public void Input() // ввод
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА КРУГА");
             Console.Write("\nВведите радиус круга: ");
-            r = Convert.ToSingle(Console.ReadLine());
+            R = Convert.ToSingle(Console.ReadLine());
 
-            if (r <= 0)
+            if (R <= 0)
             {
                 Console.WriteLine("\nОШИБКА: Радиус не может быть меньше или равным нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
-                this.input();
+                this.Input();
             }
 
             else
             {
-                area();
+                Area();
             }
         }
 
-        private void area() // площадь
+        private void Area() // площадь
         {
-            double area = Math.Round(Math.PI + Math.Pow(r, 2), 3);
-            perimeter(area);
+            area = Math.Round(Math.PI + Math.Pow(R, 2), 3);
+            Perimeter(area);
         }
 
-        private void perimeter(double area) // периметр
+        private void Perimeter(double area) // периметр
         {
-            double perimeter = Math.Round(2 * Math.PI * r, 3);
-            output(area, perimeter);
+            perimeter = Math.Round(2 * Math.PI * R, 3);
+            Output(area, perimeter); // вызывается из род. класса по умолчанию
         }
 
-        private void output(double area, double perimeter)
-        {
-            Console.WriteLine($"\nПлощадь круга: {area}");
-            Console.WriteLine($"Периметр круга: {perimeter}");
-            Console.WriteLine("\nНажмите Enter, чтобы вернуться в главное меню");
-            Console.ReadKey();
-        }
+        //private void Output(double area, double perimeter) // вывод
+        //{
+        //    Console.WriteLine($"\nПлощадь круга: {area}");
+        //    Console.WriteLine($"Периметр круга: {perimeter}");
+        //    Console.WriteLine("\nНажмите Enter, чтобы вернуться в главное меню");
+        //    Console.ReadKey();
+        //}
     }
 }

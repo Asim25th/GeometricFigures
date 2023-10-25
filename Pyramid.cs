@@ -1,14 +1,16 @@
 ﻿namespace geometric_figures
 {
-    class Pyramid // пирамида, конус
+    class Pyramid : Figures // пирамида, конус
     {
         private double R; // радиус (основания) конуса
         private double l; // образующая конуса (отрезок от вершины конуса до границы его основания)
         private double H; // высота конуса (отрезок от вершины конуса до центра его основания)
-        private double a; // ребро основания пирамиды
+        //private double a; // ребро основания пирамиды
         private double b; // боковое ребро пирамиды
 
-        public void input()
+        public Pyramid(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+
+        public void Input() // ввод
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ПИРАМИДЫ И КОНУСА");
             Console.WriteLine("\n1. Конус\n2. Треугольная пирамида\n3. Четырехугольная пирамида");
@@ -31,11 +33,11 @@
                         Console.WriteLine("\nОШИБКА: Значение не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                         Console.ReadKey();
                         Console.Clear();
-                        this.input();
+                        this.Input();
                     }
                     else
                     {
-                        area(userChoice);
+                        Area(userChoice);
                     }
                     break;
                 case 2:
@@ -52,11 +54,11 @@
                         Console.WriteLine("\nОШИБКА: Значение не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                         Console.ReadKey();
                         Console.Clear();
-                        this.input();
+                        this.Input();
                     }
                     else
                     {
-                        area(userChoice);
+                        Area(userChoice);
                     }
                     break;
                 case 3:
@@ -73,86 +75,86 @@
                         Console.WriteLine("\nОШИБКА: Значение не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                         Console.ReadKey();
                         Console.Clear();
-                        this.input();
+                        this.Input();
                     }
                     else
                     {
-                        area(userChoice);
+                        Area(userChoice);
                     }
                     break;
                 default:
                     Console.WriteLine("\nОШИБКА: Вы ввели неверное значение. Нажмите Enter и попробуйте снова.");
                     Console.ReadKey();
                     Console.Clear();
-                    input();
+                    Input();
                     break;
             }
         }
 
-        private void area(int userChoice) // площадь
+        private void Area(int userChoice) // площадь
         {
             if (userChoice == 1) // конус
             {
-                double area = Math.Round(Math.PI * R * l + Math.PI * Math.Pow(R, 2), 3);
-                perimeter(userChoice, area);
+                area = Math.Round(Math.PI * R * l + Math.PI * Math.Pow(R, 2), 3);
+                Perimeter(userChoice, area);
             }
 
             else if (userChoice == 2) // треугольная пирамида
             {
-                double area = Math.Round(Math.Sqrt(3) / 4 * Math.Pow(a, 2) + 3 / 2 * a * Math.Sqrt(Math.Pow(b, 2) - Math.Pow(a, 2) / 4), 3);
-                perimeter(userChoice, area);
+                area = Math.Round(Math.Sqrt(3) / 4 * Math.Pow(a, 2) + 3 / 2 * a * Math.Sqrt(Math.Pow(b, 2) - Math.Pow(a, 2) / 4), 3);
+                Perimeter(userChoice, area);
             }
 
             else if (userChoice == 3) // четырехугольная пирамида
             {
-                double area = Math.Round(Math.Pow(a, 2) + 2 * a * Math.Sqrt(Math.Pow(b, 2) - Math.Pow(a, 2) / 4), 3);
-                perimeter(userChoice, area);
+                area = Math.Round(Math.Pow(a, 2) + 2 * a * Math.Sqrt(Math.Pow(b, 2) - Math.Pow(a, 2) / 4), 3);
+                Perimeter(userChoice, area);
             }
         }
 
-        private void perimeter(int userChoice, double area) // периметр
+        private void Perimeter(int userChoice, double area) // периметр
         {
             if (userChoice == 1) // конус
             {
-                double perimeter = Math.Round(R * Math.PI + l * 2, 3);
-                volume(userChoice, area, perimeter);
+                perimeter = Math.Round(R * Math.PI + l * 2, 3);
+                Volume(userChoice, area, perimeter);
             }
 
             else if (userChoice == 2) // треугольная пирамида
             {
-                double perimeter = Math.Round(3 * a + 3 * (a + b + b), 3);
-                volume(userChoice, area, perimeter);
+                perimeter = Math.Round(3 * a + 3 * (a + b + b), 3);
+                Volume(userChoice, area, perimeter);
             }
 
             else if (userChoice == 3) // четырехугольная пирамида
             {
-                double perimeter = Math.Round(4 * a + 4 * (a + b + b), 3);
-                volume(userChoice, area, perimeter);
+                perimeter = Math.Round(4 * a + 4 * (a + b + b), 3);
+                Volume(userChoice, area, perimeter);
             }
         }
 
-        private void volume(int userChoice, double area, double perimeter) // объем
+        private void Volume(int userChoice, double area, double perimeter) // объем
         {
             if (userChoice == 1) // конус
             {
                 double volume = Math.Round((Math.PI * Math.Pow(R, 2) * H) / 3, 3);
-                output(area, perimeter, volume);
+                Output(area, perimeter, volume);
             }
 
             else if (userChoice == 2) // треугольная пирамида
             {
                 double volume = Math.Round(((Math.Pow(a, 2) * Math.Sqrt(3)) / 4 * H) / 3, 3);
-                output(area, perimeter, volume);
+                Output(area, perimeter, volume);
             }
 
             else if (userChoice == 3) // четырехугольная пирамида
             {
                 double volume = Math.Round((Math.Pow(a, 2) * H) / 3, 3);
-                output(area, perimeter, volume);
+                Output(area, perimeter, volume);
             }
         }
 
-        private void output(double area, double perimeter, double volume)
+        private void Output(double area, double perimeter, double volume) // вывод
         {
             Console.WriteLine($"\nПлощадь фигуры: {area}");
             Console.WriteLine($"Периметр фигуры: {perimeter}");

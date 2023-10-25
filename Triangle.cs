@@ -1,12 +1,14 @@
 ﻿namespace geometric_figures
 {
-    class Triangle // треугольник
+    class Triangle : Figures // треугольник
     {
-        private double a;
-        private double b;
-        private double c;
+        //private double a; // первая сторона треугольника
+        private double b; // вторая сторая сторона треугольника
+        private double c; // третья сторона треугольника
 
-        public void input()
+        public Triangle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+
+        public void Input() // ввод
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА ТРЕУГОЛЬНИКА");
             Console.Write("\nВведите длину первой стороны треугольника: ");
@@ -21,14 +23,14 @@
                 Console.WriteLine("\nОШИБКА: Длина не может быть меньше или равной нулю. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
-                this.input();
+                this.Input();
             }
 
             else
             {
                 if (a + b > c && a + c > b && b + c > a) // проверка треугольника на существование
                 {
-                    this.area();
+                    this.Area();
                 }
 
                 else
@@ -36,25 +38,25 @@
                     Console.WriteLine("\nОШИБКА: Такой треугольник не существует. Нажмите Enter и попробуйте снова.");
                     Console.ReadKey();
                     Console.Clear();
-                    this.input();
+                    this.Input();
                 }
             }
         }
 
-        private void area() // площадь
+        private void Area() // площадь
         {
             double p = (a + b + c) / 2; // полупериметр
             double area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
-            perimeter(area);        
+            Perimeter(area);        
         }
 
-        private void perimeter(double arae) // периметр
+        private void Perimeter(double arae) // периметр
         {
             double perimeter = Math.Round(a + b + c, 3);
-            output(arae, perimeter);
+            Output(arae, perimeter);
         }
 
-        private void output(double area, double perimeter)
+        public override void Output(double area, double perimeter) // вывод измненный через override
         {
             if (a != b && a != c && b != c) // разносторонний ли треугольник
             {

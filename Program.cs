@@ -12,37 +12,37 @@
             switch (userChoice)
             {
                 case 1:
-                    Square square = new Square();
+                    Square square = new Square(0, 0, 0);
                     Console.Clear();
-                    square.input();
+                    square.Input();
                     Console.Clear();
                     Main(args);
                     break;
                 case 2:
-                    Rectangle rectangle = new Rectangle();
+                    Rectangle rectangle = new Rectangle(0, 0, 0);
                     Console.Clear();
-                    rectangle.input();
+                    rectangle.Input();
                     Console.Clear();
                     Main(args);
                     break;
                 case 3:
-                    Circle circle = new Circle();
+                    Circle circle = new Circle(0, 0, 0);
                     Console.Clear();
-                    circle.input();
+                    circle.Input();
                     Console.Clear();
                     Main(args);
                     break;
                 case 4:
-                    Triangle triangle = new Triangle();
+                    Triangle triangle = new Triangle(0, 0, 0);
                     Console.Clear();
-                    triangle.input();
+                    triangle.Input();
                     Console.Clear();
                     Main(args);
                     break;
                 case 5:
-                    Pyramid pyramid = new Pyramid();
+                    Pyramid pyramid = new Pyramid(0, 0, 0);
                     Console.Clear();
-                    pyramid.input();
+                    pyramid.Input();
                     Console.Clear();
                     Main(args);
                     break;
