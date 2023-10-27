@@ -8,9 +8,9 @@
             {
                 Console.WriteLine("ПРОГРАММА ДЛЯ ВЫЧИСЛЕНИЯ ПЛОЩАДИ \nИ ПЕРИМЕТРА ГЕОМЕТРИЧЕСКИХ ФИГУР");
                 Console.WriteLine("\n1. Квадрат\n2. Прямоугольник\n3. Круг\n4. Треугольник\n5. Пирамида / Конус");
+                Console.WriteLine("\nДля завершения работы программы введите 0");
                 Console.Write("\nВведите номер желаемой фигуры: ");
                 int userChoice = (Convert.ToInt32(Console.ReadLine()));
-
                 switch (userChoice)
                 {
                     case 0:
