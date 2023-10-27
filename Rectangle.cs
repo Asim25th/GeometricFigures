@@ -12,10 +12,10 @@
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА ПРЯМОУГОЛЬНИКА");
             Console.Write("\nВведите длину первой стороны прямоугольника: ");
             a = Convert.ToSingle(Console.ReadLine());
-            if (a <= 0) { a = checking(a); } // вызов проверки введенного значения
+            if (a <= 0) { a = Checking(a); } // вызов проверки введенного значения
             Console.Write("Введите длину второй стороны прямоугольника: ");
             b = Convert.ToSingle(Console.ReadLine());
-            if (b <= 0) { b = checking(b); }
+            if (b <= 0) { b = Checking(b); }
             Area();
         }
 

@@ -21,7 +21,7 @@
             Console.ReadKey();
         }
 
-        protected virtual double checking(double a) // проверкана то, чтобы введенные данные были больше нуля
+        protected virtual double Checking(double a) // проверкана то, чтобы введенные данные были больше нуля
         {
             while (a <= 0)
             {

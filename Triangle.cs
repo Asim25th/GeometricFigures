@@ -13,19 +13,15 @@
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА ТРЕУГОЛЬНИКА");
             Console.Write("\nВведите длину первой стороны треугольника: ");
             a = Convert.ToSingle(Console.ReadLine());
-            if (a <= 0) { a = checking(a); } // вызов проверки введенного значения
+            if (a <= 0) { a = Checking(a); } // вызов проверки введенного значения
             Console.Write("Введите длину второй стороны треугольника: ");
             b = Convert.ToSingle(Console.ReadLine());
-            if (b <= 0) { b = checking(b); }
+            if (b <= 0) { b = Checking(b); }
             Console.Write("Введите длину третьей стороны треугольника: ");
             c = Convert.ToSingle(Console.ReadLine());
-            if (c <= 0) { c = checking(c); }
+            if (c <= 0) { c = Checking(c); }
 
-            if (a + b > c && a + c > b && b + c > a) // проверка треугольника на существование
-            {
-                this.Area();
-            }
-
+            if (a + b > c && a + c > b && b + c > a) { this.Area(); } // проверка треугольника на существование
             else
             {
                 Console.WriteLine("\nОШИБКА: Такой треугольник не существует. Нажмите Enter и попробуйте снова.");
@@ -48,7 +44,7 @@
             Output(area, perimeter);
         }
 
-        private override void Output(double area, double perimeter) // вывод измненный через override
+        private new void Output(double area, double perimeter) // вывод измненный через override
         {
             if (a != b && a != c && b != c) // разносторонний ли треугольник
             {

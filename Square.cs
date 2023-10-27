@@ -11,7 +11,7 @@
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА КВАДРАТА");
             Console.Write("\nВведите длину стороны квадрата: ");
             a = Convert.ToSingle(Console.ReadLine());
-            if (a <= 0) { a = checking(a); } // вызов проверки введенного значения
+            if (a <= 0) { a = Checking(a); } // вызов проверки введенного значения
             Area();
         }
 

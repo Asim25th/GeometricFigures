@@ -26,13 +26,13 @@
                     Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА КОНУСА");
                     Console.Write("\nВведите радиус (основания) конуса: ");
                     R = Convert.ToSingle(Console.ReadLine());
-                    if (R <= 0) { R = checking(R); } // вызов проверки введенного значения
+                    if (R <= 0) { R = Checking(R); } // вызов проверки введенного значения
                     Console.Write("Введите образующую конуса (отрезок от вершины конуса до границы его основания): ");
                     l = Convert.ToSingle(Console.ReadLine());
-                    if (l <= 0) { l = checking(l); }
+                    if (l <= 0) { l = Checking(l); }
                     Console.Write("Введите высоту конуса (отрезок от вершины конуса до центра его основания): ");
                     H = Convert.ToSingle(Console.ReadLine());
-                    if (H <= 0) { H = checking(H); }
+                    if (H <= 0) { H = Checking(H); }
                     Area(userChoice);
                     break;
                 case 2:
@@ -40,13 +40,13 @@
                     Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ТРЕУГОЛЬНОЙ ПИРАМИДЫ");
                     Console.Write("\nВведите ребро основания пирамиды: ");
                     a = Convert.ToSingle(Console.ReadLine());
-                    if (a <= 0) { a = checking(a); } // вызов проверки введенного значения
+                    if (a <= 0) { a = Checking(a); } // вызов проверки введенного значения
                     Console.Write("Введите боковое ребро пирамиды: ");
                     b = Convert.ToSingle(Console.ReadLine());
-                    if (b <= 0) { b = checking(b); }
+                    if (b <= 0) { b = Checking(b); }
                     Console.Write("Введите высоту пирамиды (отрезок от вершины пирамиды до центра его основания): ");
                     H = Convert.ToSingle(Console.ReadLine());
-                    if (H <= 0) { H = checking(H); }
+                    if (H <= 0) { H = Checking(H); }
                     Area(userChoice);                   
                     break;
                 case 3:
@@ -54,13 +54,13 @@
                     Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ЧЕТЫРЕХУГОЛЬНОЙ ПИРАМИДЫ");
                     Console.Write("\nВведите ребро основания пирамиды: ");
                     a = Convert.ToSingle(Console.ReadLine());
-                    if (a <= 0) { a = checking(a); } // вызов проверки введенного значения
+                    if (a <= 0) { a = Checking(a); } // вызов проверки введенного значения
                     Console.Write("Введите боковое ребро пирамиды: ");
                     b = Convert.ToSingle(Console.ReadLine());
-                    if (b <= 0) { b = checking(b); }
+                    if (b <= 0) { b = Checking(b); }
                     Console.Write("Введите высоту пирамиды (отрезок от вершины пирамиды до центра его основания): ");
                     H = Convert.ToSingle(Console.ReadLine());
-                    if (H <= 0) { H = checking(H); }
+                    if (H <= 0) { H = Checking(H); }
                     Area(userChoice);                    
                     break;
                 default:

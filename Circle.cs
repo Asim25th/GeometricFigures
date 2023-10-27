@@ -11,7 +11,7 @@
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА КРУГА");
             Console.Write("\nВведите радиус круга: ");
             R = Convert.ToSingle(Console.ReadLine());
-            if (R <= 0) { R = checking(R); } // вызов проверки введенного значения
+            if (R <= 0) { R = Checking(R); } // вызов проверки введенного значения
             Area();
         }
 
