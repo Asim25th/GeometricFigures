@@ -3,7 +3,9 @@
     class Circle : Figures // круг
     {
         private double R; // радиус круга
+
         public Circle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+
         public void Input() // ввод
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА КРУГА");
@@ -12,11 +14,13 @@
             if (R <= 0) { R = checking(R); } // вызов проверки введенного значения
             Area();
         }
+
         private void Area() // площадь
         {
             area = Math.Round(Math.PI + Math.Pow(R, 2), 3);
             Perimeter(area);
         }
+
         private void Perimeter(double area) // периметр
         {
             perimeter = Math.Round(2 * Math.PI * R, 3);

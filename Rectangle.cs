@@ -4,7 +4,9 @@
     {
         //private double a; // первая сторона прямоугольника
         private double b; // вторая сторона прямоугольника
+
         public Rectangle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+
         public void Input() // ввод
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА ПРЯМОУГОЛЬНИКА");
@@ -16,11 +18,13 @@
             if (b <= 0) { b = checking(b); }
             Area();
         }
+
         private void Area() // площадь
         {           
             area = Math.Round(a * b, 3);
             Perimeter(area);
         }
+
         private void Perimeter(double area) // периметр
         {
             perimeter = Math.Round((a + b) * 2, 3);

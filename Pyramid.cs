@@ -7,7 +7,9 @@
         private double H; // высота конуса (отрезок от вершины конуса до центра его основания)
         //private double a; // ребро основания пирамиды
         private double b; // боковое ребро пирамиды
+
         public Pyramid(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+
         public void Input() // ввод
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ, ОБЪЕМА И ПЕРИМЕТРА ПИРАМИДЫ И КОНУСА");
@@ -69,6 +71,7 @@
                     break;
             }
         }
+
         private void Area(int userChoice) // площадь
         {
             if (userChoice == 1) // конус
@@ -87,6 +90,7 @@
                 Perimeter(userChoice, area);
             }
         }
+
         private void Perimeter(int userChoice, double area) // периметр
         {
             if (userChoice == 1) // конус
@@ -105,6 +109,7 @@
                 Volume(userChoice, area, perimeter);
             }
         }
+
         private void Volume(int userChoice, double area, double perimeter) // объем
         {
             if (userChoice == 1) // конус
@@ -123,6 +128,7 @@
                 Output(area, perimeter, volume);
             }
         }
+
         private void Output(double area, double perimeter, double volume) // вывод
         {
             Console.Write($"\nОбъем фигуры: {volume}");

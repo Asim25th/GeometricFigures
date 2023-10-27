@@ -5,12 +5,14 @@
         protected double a; // сторона фигуры
         protected double area; // площадь
         protected double perimeter; // периметр
+
         protected Figures(double a, double area, double perimeter)
         {
             this.a = a;
             this.area = area;
             this.perimeter = perimeter; 
         }
+
         protected virtual void Output(double area, double perimeter) // вывод по умолчанию
         {
             Console.WriteLine($"\nПлощадь фигуры: {area}");
@@ -18,6 +20,7 @@
             Console.WriteLine("\nНажмите Enter, чтобы вернуться в главное меню");
             Console.ReadKey();
         }
+
         protected virtual double checking(double a) // проверкана то, чтобы введенные данные были больше нуля
         {
             while (a <= 0)

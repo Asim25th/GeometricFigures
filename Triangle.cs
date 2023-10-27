@@ -5,7 +5,9 @@
         //private double a; // первая сторона треугольника
         private double b; // вторая сторая сторона треугольника
         private double c; // третья сторона треугольника
+
         public Triangle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+
         public void Input() // ввод
         {
             Console.WriteLine("ВЫЧИСЛЕНИЕ ПЛОЩАДИ И ПЕРИМЕТРА ТРЕУГОЛЬНИКА");
@@ -32,17 +34,20 @@
                 this.Input();
             }
         }
+
         private void Area() // площадь
         {
             double p = (a + b + c) / 2; // полупериметр
             double area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
             Perimeter(area);        
         }
+
         private void Perimeter(double area) // периметр
         {
             double perimeter = Math.Round(a + b + c, 3);
             Output(area, perimeter);
         }
+
         private override void Output(double area, double perimeter) // вывод измненный через override
         {
             if (a != b && a != c && b != c) // разносторонний ли треугольник
