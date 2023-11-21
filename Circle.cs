@@ -2,9 +2,9 @@
 {
     class Circle : Figures // круг
     {
-        private double R; // радиус круга
+        protected double R; // радиус круга
 
-        public Circle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+        public Circle(double a, double R, double area, double perimeter) : base(a, area, perimeter) { this.R = R; } // связь с род. классом
 
         public void Input() // ввод
         {

@@ -3,9 +3,9 @@
     class Rectangle : Figures // прямоугольник
     {
         //private double a; // первая сторона прямоугольника
-        private double b; // вторая сторона прямоугольника
+        protected double b; // вторая сторона прямоугольника
 
-        public Rectangle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+        public Rectangle(double a, double b, double area, double perimeter) : base(a, area, perimeter) { this.b = b; } // связь с род. классом
 
         public void Input() // ввод
         {

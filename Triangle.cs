@@ -3,10 +3,10 @@
     class Triangle : Figures // треугольник
     {
         //private double a; // первая сторона треугольника
-        private double b; // вторая сторая сторона треугольника
+        protected double b; // вторая сторая сторона треугольника
         private double c; // третья сторона треугольника
 
-        public Triangle(double a, double area, double perimeter) : base(a, area, perimeter) { } // связь с род. классом
+        public Triangle(double a, double b, double area, double perimeter) : base(a, area, perimeter) { this.b = b; } // связь с род. классом
 
         public void Input() // ввод
         {
