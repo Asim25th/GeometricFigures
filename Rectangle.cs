@@ -1,4 +1,4 @@
-﻿namespace geometric_figures
+﻿namespace GeometricFigures
 {
     class Rectangle : Figures // прямоугольник
     {
@@ -17,18 +17,18 @@
             b = Convert.ToSingle(Console.ReadLine());
             if (b <= 0) { b = Checking(b); }
             Area();
+            Perimeter();
+            Output(area, perimeter); // вызывается из род. класса по умолчанию
         }
 
         private void Area() // площадь
         {           
             area = Math.Round(a * b, 3);
-            Perimeter(area);
         }
 
-        private void Perimeter(double area) // периметр
+        private void Perimeter() // периметр
         {
             perimeter = Math.Round((a + b) * 2, 3);
-            Output(area, perimeter); // вызывается из род. класса по умолчанию
         }
     }
 }

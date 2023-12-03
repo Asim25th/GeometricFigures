@@ -1,4 +1,4 @@
-﻿namespace geometric_figures
+﻿namespace GeometricFigures
 {
     class Figures // родительский класс
     {
@@ -28,7 +28,7 @@
                 Console.Write("ОШИБКА: Введенное значение должно быть больше нуля.\nПопробуйте ввести значение заново: ");
                 a = double.Parse(Console.ReadLine());
             }
-            return a; // возварщение измененного значения
+            return a; // возвращение измененного значения
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace geometric_figures
+﻿namespace GeometricFigures
 {
     class Circle : Figures // круг
     {
@@ -13,18 +13,20 @@
             R = Convert.ToSingle(Console.ReadLine());
             if (R <= 0) { R = Checking(R); } // вызов проверки введенного значения
             Area();
+            Perimeter();
+            Output(area, perimeter); // вызывается из род. класса по умолчанию
         }
 
-        private void Area() // площадь
+        protected double Area() // площадь; используется protected double для реализации наследования формулы в класс Конус
         {
-            area = Math.Round(Math.PI + Math.Pow(R, 2), 3);
-            Perimeter(area);
+            area = Math.Round(Math.PI * Math.Pow(R, 2), 3);
+            return area;
         }
 
-        private void Perimeter(double area) // периметр
+        protected double Perimeter() // периметр; используется protected double для реализации наследования формулы в класс Конус
         {
             perimeter = Math.Round(2 * Math.PI * R, 3);
-            Output(area, perimeter); // вызывается из род. класса по умолчанию
+            return perimeter;
         }
     }
 }

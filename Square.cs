@@ -1,4 +1,4 @@
-﻿namespace geometric_figures
+﻿namespace GeometricFigures
 {
     class Square : Figures // квадрат
     {
@@ -13,18 +13,18 @@
             a = Convert.ToSingle(Console.ReadLine());
             if (a <= 0) { a = Checking(a); } // вызов проверки введенного значения
             Area();
+            Perimeter();
+            Output(area, perimeter); // вызывается из род. класса по умолчанию
         }
 
         private void Area() // площадь
         {
             area = Math.Round(Math.Pow(a, 2), 3);
-            Perimeter(area);
         }
 
-        private void Perimeter(double area) // периметр
+        private void Perimeter() // периметр
         {
             perimeter = Math.Round(4 * a, 3);
-            Output(area, perimeter); // вызывается из род. класса по умолчанию
         }
     }
 }

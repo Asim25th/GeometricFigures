@@ -1,10 +1,11 @@
-﻿namespace geometric_figures
+﻿namespace GeometricFigures
 {
     class Cone : Circle // конус
     {
         //private double R; // радиус (основания) конуса
         private double l; // образующая конуса (отрезок от вершины конуса до границы его основания)
         private double H; // высота конуса (отрезок от вершины конуса до центра его основания)
+        private double volume; // объем фигуры
 
         public Cone(double a, double R, double area, double perimeter) : base(a, R, area, perimeter) { } // связь с род. классом
 
@@ -20,25 +21,26 @@
             Console.Write("Введите высоту конуса (отрезок от вершины конуса до центра его основания): ");
             H = Convert.ToSingle(Console.ReadLine());
             if (H <= 0) { H = Checking(H); }
-            Area();                    
+            Area();
+            Perimeter();
+            Volume();
+            Output(area, perimeter, volume);
         }
 
         private void Area() // площадь
         {
-            area = Math.Round(Math.PI * R * l + Math.PI * Math.Pow(R, 2), 3);
-            Perimeter(area);
+            area = Math.Round(Math.PI * R * l + base.Area(), 3);
         }
 
-        private void Perimeter(double area) // периметр
+        private void Perimeter() // периметр
         {
-            perimeter = Math.Round(R * Math.PI + l * 2, 3);
-            Volume(area, perimeter);
+            perimeter = Math.Round(base.Perimeter()/2 + l * 2, 3);
+            //perimeter = Math.Round(R * Math.PI + l * 2, 3);
         }
 
-        private void Volume(double area, double perimeter) // объем
+        private void Volume() // объем
         {
-            double volume = Math.Round((Math.PI * Math.Pow(R, 2) * H) / 3, 3);
-            Output(area, perimeter, volume);
+            volume = Math.Round((Math.PI * Math.Pow(R, 2) * H) / 3, 3);
         }
 
         private void Output(double area, double perimeter, double volume) // вывод

@@ -1,4 +1,4 @@
-﻿namespace geometric_figures
+﻿namespace GeometricFigures
 {
     class Triangle : Figures // треугольник
     {
@@ -21,27 +21,30 @@
             c = Convert.ToSingle(Console.ReadLine());
             if (c <= 0) { c = Checking(c); }
 
-            if (a + b > c && a + c > b && b + c > a) { this.Area(); } // проверка треугольника на существование
+            if (a + b > c && a + c > b && b + c > a) // проверка треугольника на существование
+            { 
+                Area();
+                Perimeter();
+                Output(area, perimeter);
+            } 
             else
             {
                 Console.WriteLine("\nОШИБКА: Такой треугольник не существует. Нажмите Enter и попробуйте снова.");
                 Console.ReadKey();
                 Console.Clear();
-                this.Input();
+                Input();
             }
         }
 
         private void Area() // площадь
         {
             double p = (a + b + c) / 2; // полупериметр
-            double area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
-            Perimeter(area);        
+            area = Math.Round(Math.Sqrt(p * (p - a) * (p - b) * (p - c)), 3);
         }
 
-        private void Perimeter(double area) // периметр
+        private void Perimeter() // периметр
         {
-            double perimeter = Math.Round(a + b + c, 3);
-            Output(area, perimeter);
+            perimeter = Math.Round(a + b + c, 3);
         }
 
         private new void Output(double area, double perimeter) // вывод измненный через override
